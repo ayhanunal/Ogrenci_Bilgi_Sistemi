@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05.Eyl.2018 13:22:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Ogrenciisleri" table="ogrenciisleri" catalog="database1" optimistic-lock="version">
+        <id name="tc" type="string">
+            <column name="Tc" length="11" />
+            <generator class="assigned" />
+        </id>
+        <property name="ad" type="string">
+            <column name="Ad" length="45" not-null="true" />
+        </property>
+        <property name="soyad" type="string">
+            <column name="Soyad" length="45" not-null="true" />
+        </property>
+        <property name="sifre" type="string">
+            <column name="Sifre" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="45" not-null="true" />
+        </property>
+        <property name="adres" type="string">
+            <column name="Adres" length="45" not-null="true" />
+        </property>
+        <property name="yas" type="string">
+            <column name="Yas" length="3" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

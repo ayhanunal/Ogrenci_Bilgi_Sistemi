@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ders Ekle</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form id="form2">
+            <p:growl id="growl2"  showDetail="true" life="8000" /><center>
+            <p:panel id="panel2" header="Ders Ekleme Formu"  style="width:500px;height:560px;background-color:lightyellow;">
+                <h:panelGrid columns="2" cellpadding="6">
+                    <h:outputLabel for="dersid" value="Ders Id :*" /> 
+                    <p:inputText id="dersid" required="true" value="#{dersEkle.dersid}" maxlength="5" />
+
+                    <h:outputLabel for="adi" value="Ders Adı :*" /> 
+                    <p:inputText id="adi" required="true"  value="#{dersEkle.dersadi}" />
+
+                    <h:outputLabel for="akdid" value="Akademisyen Tc :*" /> 
+                    <p:inputText id="akdid" required="true"  value="#{dersEkle.akademisyentc}" maxlength="11" />
+
+                    <h:outputLabel for="bölid" value=" Bölüm Id :*" />
+                    <p:inputText id="bölid" value="#{dersEkle.bolumid}" required="true" maxlength="3" />
+                    
+                    <h:outputLabel for="donem" value="Dönem :*" />
+                    <p:inputText id="donem" value="#{dersEkle.donem}" required="true" maxlength="1" />
+
+                    
+                    <f:facet name="footer">
+                        <p:commandButton icon="ui-icon-plusthick" value="Dersi Ekle" update="growl2" action="#{dersEkle.dersiEkle()}" style="width: 150px;" />              
+                        <p:commandButton icon="ui-icon-trash" value="Formu Sil" type="reset" style="width: 150px;" /> </f:facet>
+                        
+                    
+
+
+                </h:panelGrid>
+            </p:panel></center>
+        </h:form>
+    </h:body>
+</html>
+

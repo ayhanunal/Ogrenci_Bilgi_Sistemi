@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Ders Sil</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form id="form2">
+            <p:growl id="growl2"  showDetail="true" life="8000" /><center>
+            <p:panel id="panel2" header="Ders Silme Formu"  style="width:500px;height:560px;background-color:lightyellow;">
+                <h:panelGrid columns="2" cellpadding="6">
+                    <h:outputLabel for="dersid" value="Ders Id :*" /> 
+                    <p:inputText id="dersid" required="true" value="#{dersSil.dersid}" maxlength="5" />
+
+                    
+                    
+
+                  
+                    <f:facet name="footer">
+                        <p:commandButton icon="ui-icon-trash" value="Dersi Sil" update="growl2" action="#{dersSil.dersiSil()}" />                 
+                        <p:commandButton icon="ui-icon-trash" value="Formu Sil" type="reset" /> </f:facet>
+                        
+                    
+
+
+                </h:panelGrid>
+            </p:panel></center>
+        </h:form>
+    </h:body>
+</html>
+

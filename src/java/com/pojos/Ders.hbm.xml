@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05.Eyl.2018 13:22:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Ders" table="ders" catalog="database1" optimistic-lock="version">
+        <id name="dersid" type="string">
+            <column name="Dersid" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="dersadi" type="string">
+            <column name="Dersadi" length="45" not-null="true" />
+        </property>
+        <property name="bolumid" type="string">
+            <column name="Bolumid" length="3" not-null="true" />
+        </property>
+        <property name="akademisyentc" type="string">
+            <column name="Akademisyentc" length="11" not-null="true" />
+        </property>
+        <property name="donem" type="int">
+            <column name="Donem" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

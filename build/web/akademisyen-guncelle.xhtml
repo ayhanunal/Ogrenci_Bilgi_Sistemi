@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Güncelle</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form id="form2">
+            <p:growl id="growl2"  showDetail="true" life="8000" /><center>
+            <p:panel id="panel2" header="Akademisyen Güncelleme"  style="width:500px;height:560px;background-color:lightyellow;">
+                <h:panelGrid columns="2" cellpadding="6">
+                    <h:outputLabel for="ad" value="Adı :" /> 
+                    <p:inputText id="ad" required="true" value="#{akademisyenGirisi.ad}"  />
+                    
+                    <h:outputLabel for="soyad" value="Soyadı :" /> 
+                    <p:inputText id="soyad" required="true" value="#{akademisyenGirisi.soyad}"  />
+                    
+                    <h:outputLabel for="email" value="Email :" /> 
+                    <p:inputText id="email" required="true" value="#{akademisyenGirisi.email}"  />
+                    
+                    <h:outputLabel for="adres" value="Adresi :" /> 
+                    <p:inputText id="adres" required="true" value="#{akademisyenGirisi.adres}"  />
+                    
+                    <h:outputLabel for="yas" value="Yaşı :" /> 
+                    <p:inputText id="yas" required="true" value="#{akademisyenGirisi.yas}"  />
+                 
+                    <f:facet name="footer">
+                        <p:commandButton icon="ui-icon-close" value="Güncelle" update="growl2" action="#{akademisyenGirisi.guncelle()}" />            
+                        <p:commandButton icon="ui-icon-trash" value="Formu Sil" type="reset" /> </f:facet>
+
+                </h:panelGrid>
+            </p:panel></center>
+        </h:form>
+    </h:body>
+</html>
+

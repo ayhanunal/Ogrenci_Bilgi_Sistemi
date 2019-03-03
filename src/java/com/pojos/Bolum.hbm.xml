@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05.Eyl.2018 13:22:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojos.Bolum" table="bolum" catalog="database1" optimistic-lock="version">
+        <id name="bolumid" type="string">
+            <column name="Bolumid" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="bolumadi" type="string">
+            <column name="Bolumadi" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

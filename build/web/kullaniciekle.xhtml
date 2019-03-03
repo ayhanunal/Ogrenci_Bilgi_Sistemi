@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Kişi Ekle</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form id="form2">
+            <p:growl id="growl2"  showDetail="true" life="8000" /><center>
+            <p:panel id="panel2" header="Kişi Ekleme Formu"  style="width:500px;height:560px;background-color:lightyellow;">
+                <h:panelGrid columns="2" cellpadding="6">
+                    <h:outputLabel for="tc" value="TC Numarası :*" /> 
+                    <p:inputText maxlength="11" id="tc" required="true" value="#{kisiEkle.tc}" />
+
+                    <h:outputLabel for="adi" value="Adı :*" /> 
+                    <p:inputText id="adi" required="true"  value="#{kisiEkle.ad}" />
+
+                    <h:outputLabel for="soyadi" value="Soyadı :*" /> 
+                    <p:inputText id="soyadi" required="true"  value="#{kisiEkle.soyad}" />
+
+                    <h:outputLabel for="sifre" value="Şifre :*" />
+                    <p:password id="sifre" value="#{kisiEkle.sifre}" required="true" label="sifre" />
+                    
+                    <h:outputLabel for="email" value="E-Posta :*" /> 
+                    <p:inputText id="email" required="true"  value="#{kisiEkle.email}" />
+
+                    <p:outputLabel for="durumu" value="Durumu :" /> 
+                    <h:panelGrid>                     
+                        <p:selectOneMenu style="width:200px;"  value="#{kisiEkle.durumu}" id="durumu" required="true">  
+                            <f:selectItem itemLabel="Seç" itemValue="#{null}" />  
+                            <f:selectItem itemLabel="Öğrenci" itemValue="ogrenci" />  
+                            <f:selectItem itemLabel="Akademisyen" itemValue="akademisyen" />				
+                        </p:selectOneMenu>  
+                    </h:panelGrid>
+
+                    <p:outputLabel for="bolum" value="Bölüm :"/> 
+                    <h:panelGrid>                      
+                        <p:selectOneMenu style="width:200px;" value="#{kisiEkle.bolum}" id="bolum" required="true">  
+                            <f:selectItem itemLabel="Seç" itemValue="#{null}" />  
+                            <f:selectItem itemLabel="Matematik" itemValue="matematik" />  
+                            <f:selectItem itemLabel="İktisat" itemValue="iktisat" /> 
+                            <f:selectItem itemLabel="Bilgisayar Muhendisliği" itemValue="bilgisayar" />  
+                            <f:selectItem itemLabel="İnşaat Mühendisliği" itemValue="insaat" />
+                            <f:selectItem itemLabel="Tıp" itemValue="tip" />  	
+                            <f:selectItem itemLabel="Biyomühendislik" itemValue="biyomuhendislik" />  	
+                        </p:selectOneMenu>  
+                    </h:panelGrid> 
+
+                    <h:outputLabel for="adres" value="Adresi :* "  /> 
+                    <p:inputTextarea id="adresi" required="true"  value="#{kisiEkle.adres}" style="width:194px;" />
+
+                    <h:outputLabel for="yas" value="Yaş :*" /> 
+                    <p:inputText id="yas" value="#{kisiEkle.yas}"  required="true" maxlength="2" /> 
+
+                    
+
+                    <f:facet name="footer">
+                        <p:commandButton icon="ui-icon-plusthick" value="Kişiyi Ekle" update="growl2" action="#{kisiEkle.kisiyiEkle()}" />                 
+                        <p:commandButton icon="ui-icon-trash" value="Formu Sil" type="reset" /> </f:facet>
+                        
+
+                </h:panelGrid>
+            </p:panel></center>
+        </h:form>
+    </h:body>
+</html>
+

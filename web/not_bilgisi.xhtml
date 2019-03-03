@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Not Bilgisi</title>
+    </h:head>
+            <h:body style="background-color:lightgoldenrodyellow;">
+        
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                    <h4 style="color: red;">!!! -1 Yazan Notlar Sınava Girilmediği Anlamına Gelir !!!</h4>
+                    <p:dataTable var="notu" value="#{ogrenciGirisi.notBilgisi()}">
+                        <p:column headerText="Ders Id">
+                            <h:outputText value="#{notu.dersid}" />
+                        </p:column>
+
+                        <p:column headerText="Vize">
+                            <h:outputText value="#{notu.vize}" />
+                        </p:column>
+                        
+                        <p:column headerText="Final">
+                            <h:outputText value="#{notu.final_}" />
+                        </p:column>
+                        
+                        
+                        <p:column headerText="Bütünleme">
+                            <h:outputText value="#{notu.but}" />
+                        </p:column>
+ 
+                    </p:dataTable>                
+                </h:form>       
+            </h:body>
+</html>
+

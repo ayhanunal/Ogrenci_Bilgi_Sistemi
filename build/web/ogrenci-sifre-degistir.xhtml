@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Şifre Değiştir</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form id="form2">
+            <p:growl id="growl2"  showDetail="true" life="8000" /><center>
+            <p:panel id="panel2" header="Şifre Değiştir"  style="width:500px;height:560px;background-color:lightyellow;">
+                <h:panelGrid columns="2" cellpadding="6">
+                    
+                    <p:outputLabel for="tc" value="Tc :" /> 
+                    <p:inputText id="tc" required="true" value="#{ogrenciSifre.tc}" maxlength="11" />
+                    
+                    <p:outputLabel for="ad" value="Adı :" /> 
+                    <p:inputText id="ad" required="true" value="#{ogrenciSifre.ad}" />
+                    
+                    <p:outputLabel for="soyad" value="Soyadı :" /> 
+                    <p:inputText id="soyad" required="true" value="#{ogrenciSifre.soyad}" />
+                 
+                    <p:outputLabel for="yeni" value="Yeni Şifre :" /> 
+                    <p:password id="yeni" required="true" value="#{ogrenciSifre.yeniSifre}" />
+                    
+                    <f:facet name="footer">
+                        <p:commandButton icon="ui-icon-trash" value="Şifre Değiştir" update="growl2" action="#{ogrenciSifre.sifreDegistir()}" />                 
+                        <p:commandButton icon="ui-icon-trash" value="Formu Sil" type="reset" /> </f:facet>
+                        
+                    
+
+
+                </h:panelGrid>
+            </p:panel></center>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Öğrenci Girişi</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;">
+        <h:form>
+            <p:growl id="growl" showDetail="true" sticky="false" life="8000" autoUpdate="true" />
+            <p:panel header="Öğrenci Girişi" footer="----------------------------------------------------------" style="width:370px;height:280px;position: absolute; top: 155px; left: 480px;text-align: center;background-color: lightgoldenrodyellow;">
+                <p:panelGrid columns="2" style="width: 335px;background-color: lightgoldenrodyellow;">
+                    
+                        <p:outputLabel value="Öğrenci TcNo"/>  
+                        <p:inputText value="#{ogrenciGirisi.tc}" maxlength="11" />
+                        <p:outputLabel value="Öğrenci Şifresi"/>
+                        <p:password  value="#{ogrenciGirisi.sifre}" />
+                    <f:facet name="footer">
+                        <h:commandButton value="Giriş" action="#{ogrenciGirisi.ogrenciGirdi()}" style="width: 165px; left: 60px;"/>
+                        <h:commandButton type="reset" value="Temizle" style="width: 166px; left:90px; " />
+                    </f:facet>
+                </p:panelGrid><br/>
+                <h:commandButton value="Şifremi Unuttum" action="ogrenci-sifre-degistir?faces-redirect=true" style="width: 165px; left: 60px;"/>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

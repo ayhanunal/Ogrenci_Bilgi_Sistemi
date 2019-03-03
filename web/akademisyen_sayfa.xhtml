@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Akademisyen Sayfası</title>
+    </h:head>
+    <h:body style="background-color: lightgoldenrodyellow;"><center>
+        <h1 style="font-family: fantasy;text-align: center;">Akademisyen Sayfası</h1>
+        <h:form>
+            <p:dataTable var="bilgi" value="#{akademisyenGirisi.kisiBilgi()}" style="width: 250px;">
+                <p:column headerText="Sayın" style="width:130px;" >
+                    <center>
+                        <h:outputText value="#{bilgi.ad}"/>
+                        <h:outputText value=" " />
+                        <h:outputText value="#{bilgi.soyad}" />
+                    </center>
+                </p:column>
+                <p:column headerText="Öğrenci Sayısı" style="width:90px;" >
+                    <center>
+                        <h:outputText value="#{akademisyenGirisi.ogrSayiVer()}"/>
+                    </center>
+                </p:column>
+            </p:dataTable><br/><br/>
+            
+            <p:growl id="mesaj" showDetail="true"/>
+
+            <p:menuButton value="Dersler">
+                <p:menuitem value="Verilen Ders" action="verilenders.xhtml?faces-redirect=true" update="mesaj" icon="ui-icon-disk"/>
+                <p:menuitem value="Not Girişi" action="not_girisi.xhtml?faces-redirect=true" update="mesaj" icon="ui-icon-pencil"/>
+            </p:menuButton>
+            <p:menuButton value="Öğrenciler">
+                <p:menuitem value="Öğrenci Listesi" action="akd_ogrenciler.xhtml?faces-redirect=true" update="mesaj" icon="ui-icon-disk"/>
+            </p:menuButton>
+            <p:menuButton value="Güncelle">
+                <p:menuitem value="Bilgilerimi Güncelle" action="akademisyen-guncelle.xhtml?faces-redirect=true" update="mesaj" icon="ui-icon-pencil"/>
+                <p:menuitem value="Şifreyi Değiştir" action="akademisyen-sifre-degistir.xhtml?faces-redirect=true" update="mesaj" icon="ui-icon-pencil"/>
+            </p:menuButton>
+            <p:menuButton value="Çıkış">
+                <p:menuitem value="OBS Giriş" url="index.xhtml" icon="ui-icon-extlink"/>
+                <p:menuitem value="Akademisyen Giriş" url="akademisyen_girisi.xhtml" icon="ui-icon-extlink"/>
+            </p:menuButton>
+            
+        </h:form></center>
+    </h:body>
+</html>
+

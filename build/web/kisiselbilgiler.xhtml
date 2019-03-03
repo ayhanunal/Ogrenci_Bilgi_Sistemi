@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Kişisel Bilgiler</title>
+    </h:head>
+            <h:body style="background-color:lightgoldenrodyellow;">
+        
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+                   
+                    <p:dataTable id="kisiselbilgi" var="bilgi" value="#{ogrenciGirisi.kisiselBilgi()}">
+                        <p:column headerText="Tc No" style="width: 110px;">
+                            <h:outputText value="#{bilgi.tc}" />
+                        </p:column>
+
+                        <p:column headerText="Adı">
+                            <h:outputText value="#{bilgi.ad}" />
+                        </p:column>
+
+                        <p:column headerText="Soyadı">
+                            <h:outputText value="#{bilgi.soyad}" />
+                        </p:column>
+                        
+                        <p:column headerText="Şifre">
+                            <h:outputText value="#{bilgi.sifre}" />
+                        </p:column>
+                        
+                        <p:column headerText="Email" style="width: 250px;">
+                            <h:outputText value="#{bilgi.email}" />
+                        </p:column>
+                        
+                        <p:column headerText="Adres">
+                            <h:outputText value="#{bilgi.adres}" />
+                        </p:column>
+                        
+                        <p:column headerText="Bölüm Adı" style="width: 250px;">
+                            <h:outputText value="#{bilgi.bolumid}" />
+                        </p:column>
+                     
+                    </p:dataTable>                
+                </h:form>       
+            </h:body>
+</html>
+
